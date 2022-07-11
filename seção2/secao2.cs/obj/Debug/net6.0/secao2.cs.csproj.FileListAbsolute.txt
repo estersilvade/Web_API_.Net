@@ -1,0 +1,15 @@
+D:\udemi Web api\seção2\secao2.cs\bin\Debug\net6.0\secao2.cs.exe
+D:\udemi Web api\seção2\secao2.cs\bin\Debug\net6.0\secao2.cs.deps.json
+D:\udemi Web api\seção2\secao2.cs\bin\Debug\net6.0\secao2.cs.runtimeconfig.json
+D:\udemi Web api\seção2\secao2.cs\bin\Debug\net6.0\secao2.cs.dll
+D:\udemi Web api\seção2\secao2.cs\bin\Debug\net6.0\secao2.cs.pdb
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.csproj.AssemblyReference.cache
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.GeneratedMSBuildEditorConfig.editorconfig
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.AssemblyInfoInputs.cache
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.AssemblyInfo.cs
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.csproj.CoreCompileInputs.cache
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.dll
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\refint\secao2.cs.dll
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.pdb
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\secao2.cs.genruntimeconfig.cache
+D:\udemi Web api\seção2\secao2.cs\obj\Debug\net6.0\ref\secao2.cs.dll
