@@ -1,4 +1,6 @@
 // a linha 2 e 3 é o host  que vai estar escutando o que o usuario quer  fazer 
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
@@ -19,8 +21,40 @@ app.MapPost("/saveproduct", (Product product ) => {
   return product.Code + " - " + product.Name ;
 });
 
+//vc pode acessar a seguinte Ponte e através de parametros via url 
+//api.app.com/user?datart{date}&dateend=[date] /Fazendo uma consulta passandoas informação atravez da url
+app.MapGet("/getprodut", ([FromQuery] string dateStart, [FromQuery]string  stringDateEnd) =>{
+  return  dateStart + " - " + dateEnd;
+});
+
+//api.app.com/user/{code}// tambem posso passar atraves da rota 
+app.MapGet("/getprodut/{code}", ([FromRout] string code) =>{
+  return  code;
+});
+
+app.MapGet("/getproductbyheader", (HttpRequest request) =>{
+  return request.Headers["product-code"].ToString();
+});
+
 
 app.Run();
+
+// representando o banco de dados 
+public class ProductRepository{
+  public List<Product> Products  {get; set;}
+  
+  public void Add(Product product) {
+    if  (Product == null)
+      product = new List<Product> ();
+
+    Products.Add(product);
+  }
+  public Product GetBy(string code ){
+    return Product.First(p => p.Code == code);
+  }
+    
+
+}
  
  // Antes de criar o meu novo end poit   criar class para representar o produto 
 // lembre que  tenho  que lembrar o tipo de acesso  "Public " o tipo  e o nome 
