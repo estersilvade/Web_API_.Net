@@ -4,38 +4,46 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+//app.MapGet("/", () => "Hello World!");
 
 // como retorna um json em  um end point en c   
-app.MapGet("/user", () => new { Name = "Ester Silva ", Age = 35 });
+//app.MapGet("/user", () => new { Name = "Ester Silva ", Age = 35 });
 
 // alterar o header de reposta / insira no metodo o obj responsavel para retornar a resposta nete caso é o HTTP Response 
 // Toda vez que eu vou passar por um metodo eu dou o Nome depois o tipo da variavel . depois eu posso chamar resp.headers que é uma opção para chamr todos os heads e depois adicionar 
-app.MapGet("/AddHeader", (HttpResponse response) =>
+/*app.MapGet("/AddHeader", (HttpResponse response) =>
 {
   response.Headers.Add("teste", "Ester Silva");
   return new{Name = "Ester Silva", Age = 33};
-});
+});*/
 // neste met   env  informe prenchidas 
-app.MapPost("/saveproduct", (Product product ) => {
+/*app.MapPost("/saveproduct", (Product product ) => {
   return product.Code + " - " + product.Name ;
-});
+});*/
 
 //vc pode acessar a seguinte Ponte e através de parametros via url 
 //api.app.com/user?datart{date}&dateend=[date] /Fazendo uma consulta passandoas informação atravez da url
-app.MapGet("/getprodut", ([FromQuery] string dateStart, [FromQuery]string  stringDateEnd) =>{
+/*app.MapGet("/getprodut", ([FromQuery] string dateStart, [FromQuery]string  stringDateEnd) =>{
   return  dateStart + " - " + dateEnd;
-});
+});*/
 
 //api.app.com/user/{code}// tambem posso passar atraves da rota 
-app.MapGet("/getprodut/{code}", ([FromRout] string code) =>{
+/*app.MapGet("/getprodut/{code}", ([FromRout] string code) =>{
   return  code;
 });
+*/
 
-app.MapGet("/getproductbyheader", (HttpRequest request) =>{
+/*app.MapGet("/getproductbyheader", (HttpRequest request) =>{
   return request.Headers["product-code"].ToString();
+});*/
+app.MapPost("/saveproduct", (Product product) => {
+ ProductRepository.Add(product);
 });
 
+app.MapGet("/getproduct/{code}" , ([FromRoute] String code ) => {
+ var product = ProductRepository.GetBy(code);
+ return product;
+});
 
 app.Run();
 
